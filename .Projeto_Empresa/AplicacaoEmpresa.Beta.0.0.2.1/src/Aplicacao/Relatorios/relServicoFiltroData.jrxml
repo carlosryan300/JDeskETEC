@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relServicoFiltroData" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dfad4f56-8c6f-4752-9323-403f6661cad0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nome" class="java.lang.String"/>
+	<field name="sobrenome" class="java.lang.String"/>
+	<field name="Marca" class="java.lang.String"/>
+	<field name="modelo" class="java.lang.String"/>
+	<field name="cor" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="TipoServico" class="java.lang.String"/>
+	<field name="valorCobrado" class="java.lang.String"/>
+	<field name="data_servico" class="java.lang.String"/>
+	<group name="Group1"/>
+	<group name="Group2"/>
+	<group name="Group3"/>
+	<group name="Group4"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="8d23eede-6c48-4eda-b3d5-d6711876d767"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="e600ffa7-9591-4f77-b741-317923ed1453"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Relatório]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="5d0f4128-88ae-4ec4-9e62-e3e534b57dba"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório de Serviços]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="5993c578-17b9-45bf-a879-dbd28c25a10b"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="61" height="20" uuid="0dcee327-a170-4c41-9bb7-728784d5f748"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="0" width="61" height="20" uuid="fc2526c2-009a-4ec2-8e0f-b57c32ff2db4"/>
+				<text><![CDATA[sobrenome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="122" y="0" width="61" height="20" uuid="6a3c69a4-91c4-4df8-bcff-07d71ab5ac5b"/>
+				<text><![CDATA[Marca]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="0" width="61" height="20" uuid="16d73f7e-7a10-4eda-a038-d4ef57c1c34a"/>
+				<text><![CDATA[modelo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="0" width="61" height="20" uuid="8aa4065d-eddd-4a2d-be37-beb3314ddfbc"/>
+				<text><![CDATA[cor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="61" height="20" uuid="5319c811-ad2b-479f-9e9c-86420f466cbd"/>
+				<text><![CDATA[placa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="0" width="61" height="20" uuid="4749c781-4f12-4bf0-b871-2fcc84863989"/>
+				<text><![CDATA[TipoServico]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="427" y="0" width="61" height="20" uuid="41eb3c8c-e23f-4ac5-959c-04610d8138b3"/>
+				<text><![CDATA[valorCobrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="61" height="20" uuid="69209a15-3ae3-4962-9376-fd51dae50e4d"/>
+				<text><![CDATA[data_servico]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="82a85cb0-ba88-48bf-9138-b75d4ff7a424"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="61" height="20" uuid="38c05f42-2be5-411f-9ec7-759b9a1d135b"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="61" y="0" width="61" height="20" uuid="01092b3c-5cb1-4c47-bbd4-aeb72e1140c0"/>
+				<textFieldExpression><![CDATA[$F{sobrenome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="0" width="61" height="20" uuid="6662606c-da65-4e81-a007-20d173b733a1"/>
+				<textFieldExpression><![CDATA[$F{Marca}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="0" width="61" height="20" uuid="610e633a-e615-4c9b-91cd-8bba28244202"/>
+				<textFieldExpression><![CDATA[$F{modelo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="244" y="0" width="61" height="20" uuid="f80903ca-597e-4c70-af89-370bd442a068"/>
+				<textFieldExpression><![CDATA[$F{cor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="61" height="20" uuid="80156a29-1ed7-44d4-8e4f-5279cfe32ba4"/>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="61" height="20" uuid="96abdcae-f88e-433b-9eb5-2f7ab8bf21a9"/>
+				<textFieldExpression><![CDATA[$F{TipoServico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="61" height="20" uuid="33e70648-300d-4692-92f0-03c8960d89f8"/>
+				<textFieldExpression><![CDATA[$F{valorCobrado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="61" height="20" uuid="673507dd-13c8-4651-acd7-824c24ef08d6"/>
+				<textFieldExpression><![CDATA[$F{data_servico}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="ba834d73-9b2a-4c97-8f03-6e663a2c5726"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="6591f1dc-c779-4248-b770-73ff60f1caa9"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="c5ba1def-0be5-42b4-8950-2baba67e1fb8"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

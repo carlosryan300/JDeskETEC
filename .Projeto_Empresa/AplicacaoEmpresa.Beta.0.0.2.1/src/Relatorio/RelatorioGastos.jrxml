@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4b2d0f0d-e6f5-4572-9dc6-5cf60d384191">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DataInicio" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DataFim" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from gastos where datacad between $P{DataInicio} and $P{DataFim} ORDER BY datacad;]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="valor" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="datacad" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="Soma" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="ec58c0f3-4b1d-42d5-b0df-9c81b82763e6"/>
+				<staticText>
+					<reportElement x="20" y="10" width="234" height="43" forecolor="#FFFFFF" uuid="e813ec2e-bc49-4bd9-b8a1-e5f521346341"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Gastos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="287" y="72" width="47" height="20" forecolor="#FFFFFF" uuid="146f4863-f5f9-4bfc-880f-6f4a2e667bcf"/>
+					<textElement textAlignment="Right">
+						<font fontName="Segoe UI" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[De:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="339" y="72" width="102" height="20" uuid="e3c9d0d8-3065-460c-be95-3aa1d159f2fc"/>
+					<textElement>
+						<font fontName="Segoe UI" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{DataInicio}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="448" y="72" width="27" height="20" forecolor="#FFFFFF" uuid="ab3012b2-37e2-46d8-87c7-f6887c76d189"/>
+					<textElement textAlignment="Right">
+						<font fontName="Segoe UI" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Até:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="476" y="72" width="100" height="20" uuid="90f25238-526e-46c3-ad90-0a2998208c84"/>
+					<textElement>
+						<font fontName="Segoe UI" size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{DataFim}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="bae460f3-b54a-4fb1-86bc-de7406269958"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a8177c65-5399-4be3-8dc1-364f8401dba8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="138" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e2e45d79-f7de-49a7-bb38-010adf4805d3"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2e6e6612-e942-4548-8329-0a7ee4e9af71"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="414" y="0" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3f54f6bc-9944-4650-bb59-5f1439039ab0"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Gasto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="1186c2e8-5382-43d5-9931-81c1bf40c573"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="138" height="20" uuid="930c359d-03eb-428c-aab8-573ae972fc8c"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="138" y="0" width="138" height="20" uuid="e1eea384-5d10-4975-b6ee-70b41314603f"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="138" height="20" uuid="14e17d37-f83d-407b-b401-c9304163671a"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="414" y="0" width="138" height="20" uuid="4705e5ca-8f94-47ec-9f59-993858693453"/>
+				<textElement>
+					<font fontName="Segoe UI" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datacad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="72d3a27b-343f-40b9-b6a3-bcdd2ca2a894"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="72365066-a208-41e9-9026-a03e79e49bd5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="c5a9279a-9cec-4d6a-8494-10e95dedb220"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
